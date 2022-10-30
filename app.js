@@ -11,7 +11,16 @@ app.set("view engine", "handlebars");
 // setting static files
 app.use(express.static("public"));
 
-// index pag to view all restaurants
+// show one restaurant and its info
+app.get("/restaurants/:id", (req, res) => {
+  const { id } = req.params;
+  const restaurant = restaurantList.results.find(
+    (restaurant) => restaurant.id.toString() === id
+  );
+  res.render("show", { restaurant });
+});
+
+// index page to view all restaurants
 app.get("/", (req, res) => {
   res.render("index", { restaurants: restaurantList.results });
 });
