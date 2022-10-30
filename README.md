@@ -3,15 +3,12 @@
 ## Table of centents
 
 - [Overview](#overview)
-- [Screenshots](#screenshots)
 - [Features](#features)
 - [Installation](#installation)
 
 ## Overview
 
 A restaurant website built with `node.js` + `express` allows users to search restaurant information based on its keyword searches.
-
-## Screenshots
 
 ## Features
 
