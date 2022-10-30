@@ -20,6 +20,15 @@ app.get("/restaurants/:id", (req, res) => {
   res.render("show", { restaurant });
 });
 
+// search restaurants
+app.get("/search", (req, res) => {
+  const { keyword } = req.query;
+  const restaurants = restaurantList.results.filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+  );
+  res.render("index", { restaurants, keyword });
+});
+
 // index page to view all restaurants
 app.get("/", (req, res) => {
   res.render("index", { restaurants: restaurantList.results });
